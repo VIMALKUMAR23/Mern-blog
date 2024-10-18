@@ -1,4 +1,6 @@
+import { Button } from "flowbite-react";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -12,14 +14,16 @@ function Home() {
           <div>
             <h1 className="text-5xl font-bold">Read, Post, Learn - Blog !</h1>
             <p className="py-6">
-              "Info-B" is your ultimate hub for the latest tech trends,
-              inspiring art, and the beauty of calligraphy. Whether you're
-              looking to stay updated on innovations or dive into creative
-              pursuits, Info-B offers a wealth of knowledge and learning
-              opportunities. Explore and enhance your skills with expert
-              insights and practical guidance.
+            At DevBlog, we believe in making complex development topics simple and
+          accessible. From front-end design to back-end architecture, our
+          content covers a wide range of development technologies and best
+          practices to keep you up-to-date with the latest trends.
             </p>
-            <button className="btn btn-primary">Get Started</button>
+
+            <Button outline gradientDuoTone="purpleToPink">
+              <Link to="/Blog">Get Started</Link>
+              
+            </Button>
           </div>
         </div>
       </div>
