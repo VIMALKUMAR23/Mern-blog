@@ -3,12 +3,13 @@ import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
 import { FaMoon } from "react-icons/fa";
+import Proflie from "./Proflie";
 function NavBar() {
   const path = useLocation().pathname;
   return (
     <>
       <Navbar className=" border-b-2">
-        <Link className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white">
+        <Link to="/" className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white">
           <span className="px-2 py-1 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 rounded-sm text-white ">
             Dev
             <span className=" font-extrabold bg-gradient-to-r from-purple-500 via-orange-600y to-red-900  inline-block text-transparent bg-clip-text">
@@ -41,20 +42,26 @@ function NavBar() {
               Sign In
             </Button>
           </Link>
+          <Proflie/>
           <NavbarToggle />
         </div>
         <Navbar.Collapse>
-          <Navbar.Link active={path === "/"} as={"div"}>
+          <Navbar.Link active={path === "/"} as={"div"} >
             <Link to="/">Home</Link>
           </Navbar.Link>
-          <Navbar.Link active={path === "/Dashboard"} as={"div"}>
-            <Link to="/Dashboard">Dashboard</Link>
+          <Navbar.Link active={path === "/Blog"} as={"div"}>
+            <Link to="/Blog">Blog</Link>
           </Navbar.Link>
-          <Navbar.Link active={path === "/signIn"} as={"div"}>
-            <Link to="/signIn">signIn</Link>
+          <Navbar.Link active={path === "/About"} as={"div"}>
+            <Link to="/About">About</Link>
+          </Navbar.Link>
+          <Navbar.Link active={path === "/About"} as={"div"}>
+            <Link to="/Admin">Admin</Link>
           </Navbar.Link>
         </Navbar.Collapse>
+       
       </Navbar>
+      
     </>
   );
 }

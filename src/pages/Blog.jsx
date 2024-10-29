@@ -2,6 +2,8 @@ import React from 'react'
 import { Card, Button } from "flowbite-react";
 import { Link } from "react-router-dom";
 
+import ProfileBlog from '../components/ProfileBlog';
+
 const blogPosts = [
   {
     id: 1,
@@ -29,22 +31,29 @@ function Blog() {
   return (
     
     <>
+    
     <div className="min-h-screen p-10">
+      
       <h1 className="text-3xl font-bold text-center mb-10">DevBlog Articles</h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid gridcol-1 gap-6">
         {blogPosts.map((post) => (
-          <Card key={post.id} className="max-w-md mx-auto">
+          <Link to='/'>
+          <Card key={post.id} >
+            <ProfileBlog/>
+            
             <h5 className="text-2xl font-semibold tracking-tight text-gray-900">
               {post.title}
             </h5>
             <p className="text-gray-700">{post.description}</p>
-            <Button color="purple" className="mt-4">
-              <Link >Read More</Link>
-            </Button>
+            
+              <p className='flex justify-center text-blue-600'>Read More</p>
+            
           </Card>
+          </Link>
         ))}
       </div>
     </div>
+
     </>
   )
 }
